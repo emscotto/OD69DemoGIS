@@ -18,7 +18,7 @@
 	    <script type="text/javascript" charset="utf-8" src="http://cdn.sencha.io/ext-4.1.0-gpl/ext-dev.js"></script>
 	    <script src="http://openlayers.org/api/2.12-rc3/OpenLayers.js"></script>
 	    <script type="text/javascript" src="js/vendor/geoExtLoader.js"></script>
-	    <script type="text/javascript" src="js/OD69sys/OD69Bootstrap.js"></script>
+	    <script type="text/javascript" src="js/OD69Sys/OD69Bootstrap.js"></script>
     </head>
     <body>
     	<!-- Loader -->
