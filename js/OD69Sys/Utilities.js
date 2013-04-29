@@ -11,11 +11,15 @@ function getObjElementFromArr(obj, key) {
 
 function deleteAllGeoDataLayers(){
 	var mapLayers = map.layers;
+	var layerArr = new Array();
 	for (i = 0; i < mapLayers.length; i++)
 	{
 	   if(mapLayers[i].name != 'Open Street Map'){
-	   		console.log('>>> ' + mapLayers[i].name);
-	   		//mapLayers[i].destroy();
+	   		layerArr.push(mapLayers[i]);
 	   }
-	} 
+	}
+	for (i = 0; i < layerArr.length; i++)
+	{
+		map.removeLayer(layerArr[i]);
+	}
 }

@@ -52,7 +52,7 @@ Ext.application({
         osm = new OpenLayers.Layer.OSM("Open Street Map");
 
         mappanel = Ext.create('GeoExt.panel.Map', {
-            title: 'OD69 - Géomatique ',
+            title: '<a href="index.html">Accueil</a> > OD69 - Géomatique',
             map: map,
             center: [4.8289,45.7593],
             zoom: 3,

@@ -18,8 +18,7 @@ if (scriptTags.length > 0) {
 }
 
 Ext.onReady(function(){
-	//To do: switch off loader
-	
+	document.getElementById('menuDiv').style.display = 'block';
 	
 	var layerSwitcher = map.getControlsByClass("OpenLayers.Control.LayerSwitcher")[0];
   	layerSwitcher.baseLbl.firstChild.data = "Fond cartographique"

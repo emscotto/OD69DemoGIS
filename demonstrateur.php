@@ -21,9 +21,14 @@
 	    <script type="text/javascript" src="js/OD69sys/OD69Bootstrap.js"></script>
     </head>
     <body>
+    	<!-- Loader -->
+    	<div id="loaderDiv" style="width:400px; height:200px; margin:0 auto;color:#000000;font-weight:bold;font-size:14px;background:#ffffff;text-align:center;border-width: 1px; border-style: solid; border-color: #109CED; margin-top:100px;">
+	       <br />OpenData69 Demonstrateur<br/>Chargement...<br /><img src="img/loading.gif">
+	    </div>
 		<!-- Menu chunk -->
-		<div id='menuDiv' style="width:300px;height:200px;">
-			<div id='wmsCombo'></div>
+		<div id='menuDiv' style="width:300px;visibility:visible;">
+			<div id='wmsGL'></div>
+			<div id='wmsGL2'></div>
 		</div>		
     </body>
 </html>

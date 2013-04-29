@@ -22,13 +22,15 @@ Ext.onReady(function(){
         height:36,
         iconCls:'wmsGLIconButton',
         iconAlign: 'left',
-        renderTo:'wmsCombo',
+        renderTo:'wmsGL',
         scale:'large',
         disabled:true,
       handler : function() {
         showGLPopup();
       } 
     });
+    
+
     
     wmsGlListView = Ext.create('Ext.grid.Panel', {
         width:500,
@@ -98,7 +100,7 @@ function getWMSGLCapabilities(){
 		   wmsGLButton.setDisabled(false);
        },
        error: function (xhr, ajaxOptions, thrownError) {
-           alert("ERROR");
+           
        }
    });
 
