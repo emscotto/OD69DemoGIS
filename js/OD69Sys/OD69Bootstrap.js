@@ -21,6 +21,22 @@ Ext.onReady(function(){
 	document.getElementById('menuDiv').style.display = 'block';
 	
 	var layerSwitcher = map.getControlsByClass("OpenLayers.Control.LayerSwitcher")[0];
-  	layerSwitcher.baseLbl.firstChild.data = "Fond cartographique"
-  	layerSwitcher.dataLbl.firstChild.data = "Données Géographiques"
+  	layerSwitcher.baseLbl.firstChild.data = "Fond cartographique";
+  	layerSwitcher.dataLbl.firstChild.data = "Données Géographiques";
+  	
+  	// Layer Management
+  	var mapLayers = map.layers;
+	var osmSlider = Ext.create('GeoExt.slider.LayerOpacity', {
+            layer: mapLayers[0],
+            aggressive: true, 
+            width: 200,
+            isFormField: false,
+            inverse: false,
+            renderTo: "layerSlider",
+            plugins: Ext.create("GeoExt.slider.Tip", {
+                getText: function(thumb) {
+                    return Ext.String.format('Opacité: {0}%', thumb.value);
+                }
+            })
+    	});
 });

@@ -8,7 +8,7 @@ Ext.Loader.setConfig({
     disableCaching: false,
     paths: {
         GeoExt: "js/geoext2/src/GeoExt",
-        Ext: "http://cdn.sencha.io/ext-4.1.0-gpl/src"
+        //Ext: "http://cdn.sencha.io/ext-4.1.0-gpl/src"
     }
 });
 
@@ -22,7 +22,9 @@ Ext.require([
     'Ext.data.*',
     'Ext.form.*',
     'Ext.button.*',
-    'Ext.grid.*'
+    'Ext.grid.*',
+    'GeoExt.slider.Tip',
+    'GeoExt.slider.LayerOpacity'
 ]);
 
 
@@ -68,14 +70,20 @@ Ext.application({
 			                	{
 				                    text: 'Coordonnées du centre de la carte',
 				                    handler: function(){
-				                        var c = GeoExt.panel.Map.guess().map.getCenter();
-				                        Ext.Msg.alert(this.getText(), c.toString());
+				                        var c = GeoExt.panel.Map.guess().map.getCenter().transform(projmercator,proj4326);
+				                        Ext.Msg.alert("Coordonnées du centre de la carte", c.toString());
 				                    }
 			                	},
 			                	{
 			                		text: 'Effacer les données géographiques',
 				                    handler: function(){
 				                        deleteAllGeoDataLayers();
+				                    }
+			                	},
+			                	{
+			                		text: 'Gestion des données géographiques',
+				                    handler: function(){
+				                        showLayerManagePopup();
 				                    }
 			                	}
 			                ]

@@ -16,7 +16,7 @@ Ext.onReady(function(){
 	});
 	
 	wmsGLButton = new Ext.Button({
-      	text: 'Chargement Catalogue Grand Lyon...',
+      	text: 'Chargement...',
         split: false,
         width:300,
         height:36,
@@ -29,8 +29,6 @@ Ext.onReady(function(){
         showGLPopup();
       } 
     });
-    
-
     
     wmsGlListView = Ext.create('Ext.grid.Panel', {
         width:500,
@@ -137,7 +135,8 @@ function showWMSGLLayer(record){
        		transparent: true 
        },
        {
-           isBaseLayer: false
+           isBaseLayer: false,
+           techname: wmsLayer
        }
    	);
    	
@@ -145,4 +144,5 @@ function showWMSGLLayer(record){
    	var wmsBoundsArr = record.get('wms_llbbox').toString().split(",");
 	map.zoomToExtent(new OpenLayers.Bounds(wmsBoundsArr[0],wmsBoundsArr[1], wmsBoundsArr[2], wmsBoundsArr[3]).transform(proj4326,projmercator));
 	wmsGLWin.close();
+	getLayerManageContent();
 }

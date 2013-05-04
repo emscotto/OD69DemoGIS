@@ -1,0 +1,30 @@
+/* ==========================================================================
+   GIS custom styles
+   ========================================================================== */
+
+a {
+    color: #E74B36;
+}
+
+.wmsGLIconButton{
+	background-image: url(../img/grandlyon.png) !important;
+}
+
+#fndCarto{
+	width:383px;
+	height:50px;
+	margin:2px 2px 2px 2px;
+	padding:2px 2px 2px 2px;
+	border-style:dotted;
+	border-width:1px;
+}
+
+#layerTitle{
+	font-size:12;
+	font-weight:bold;
+}
+
+.layerTitle{
+	font-size:9;
+	font-weight:bold;
+}

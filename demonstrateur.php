@@ -11,14 +11,15 @@
 		
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
-        <link rel="stylesheet" href="css/main.css">
+
         <!-- GeoExt/ExtJS/Openlawyers -->
-        <link rel="stylesheet" type="text/css" href="http://cdn.sencha.io/ext-4.1.0-gpl/resources/css/ext-all.css" />
-	    <link rel="stylesheet" type="text/css" href="http://cdn.sencha.io/ext-4.1.0-gpl/examples/shared/example.css" />
-	    <script type="text/javascript" charset="utf-8" src="http://cdn.sencha.io/ext-4.1.0-gpl/ext-dev.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://cdn.sencha.io/ext-4.2.0-gpl/resources/ext-theme-gray/ext-theme-gray-all.css" />
+  	    <script type="text/javascript" charset="utf-8" src="http://cdn.sencha.io/ext-4.2.0-gpl/ext-dev.js"></script>
+	    
 	    <script src="http://openlayers.org/api/2.12-rc3/OpenLayers.js"></script>
 	    <script type="text/javascript" src="js/vendor/geoExtLoader.js"></script>
 	    <script type="text/javascript" src="js/OD69Sys/OD69Bootstrap.js"></script>
+	    <link rel="stylesheet" href="css/gis.css">
     </head>
     <body>
     	<!-- Loader -->
@@ -29,6 +30,16 @@
 		<div id='menuDiv' style="width:300px;visibility:visible;">
 			<div id='wmsGL'></div>
 			<div id='wmsGL2'></div>
-		</div>		
+		</div>	
+		
+		<!-- Layer Mng chunk -->
+		<div id='layerOpa' style="width:360px;display:none;">
+			<div id='fndCarto'>
+				<div id="layerTitle">Open Street Map</div>
+				<div id="layerSlider"></div>
+			</div>
+			<div id='datCarto'></div>
+		</div>
+		
     </body>
 </html>
