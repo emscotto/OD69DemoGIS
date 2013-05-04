@@ -90,6 +90,7 @@ function getWMSGLCapabilities(){
                    pCode.push(capability.layers[i].srs);
                    pCode.push(url);
                    cCodesArr.push(pCode);
+                   console.log(capability.layers[i].title);
                }
            }
 		   wmsStore.loadData(cCodesArr,false);
