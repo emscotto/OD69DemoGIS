@@ -22,6 +22,10 @@ Le collectif Open Data 69, né de la volonté commune d’un groupe informel d�
 « données ouvertes », met à la disposition du grand public une application présentant les données géographiques ouvertes du 
 Grand Lyon.
 
+
+-------------------------------------------------------------------------------------
+CATALOGUE WMS GRAND LYON
+
 En date du mois de mai 2013, les données cartographiques ouvertes accessibles sont celles fournies par les serveurs cartographiques 
 du Grand Lyon, au nombre de 141 :
 * Bord de chaussée, trottoir (Habillage - Fond de plan)
@@ -166,4 +170,20 @@ du Grand Lyon, au nombre de 141 :
 * Tronçon de la trame viaire (Voies et adresses)
 * Serveur Grand Lyon
 
+-------------------------------------------------------------------------------------
+Etat du service Vélo'v en temps réel
+
+Présentation sous forme de grille et de carte l'ensemble des stations Velo'v, classées par défaut de la station la plus proche de l'utilisateur à la plus éloignée (il faut donc avoir activé la géolocalisation du navigateur) :
+ 
+* distance en km entre l'utilisateur et la station
+* Numéro d'ID de la station
+* Adresse de la station, si renseignée
+* Terminal de paiement disponible
+* La station fait elle partie du programme Bonus 30'? Si oui, une icone "+30'" s'affiche
+* Statut de la station : ouvert ou fermé
+* Nombre de stationnements disponibles
+* Nombre de vélov disponibles
+* Heure de mise à jour : la MàJ est quasiment à la minute chez JCD.
+
+-------------------------------------------------------------------------------------
 L'objectif du collectif est d'augmenter progressivement le nombre de couches cartographiques disponibles au public en partenariat avec le Grand Lyon, ainsi que d'ajouter d'autres catalogues cartographiques issus de distributeurs partenaires futurs.

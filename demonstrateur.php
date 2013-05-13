@@ -11,6 +11,7 @@
 		
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+         <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
         <!-- GeoExt/ExtJS/Openlawyers -->
         <link rel="stylesheet" type="text/css" href="http://cdn.sencha.io/ext-4.2.0-gpl/resources/ext-theme-gray/ext-theme-gray-all.css" />
@@ -20,6 +21,11 @@
 	    <script type="text/javascript" src="js/vendor/geoExtLoader.js"></script>
 	    <script type="text/javascript" src="js/OD69Sys/OD69Bootstrap.js"></script>
 	    <link rel="stylesheet" href="css/gis.css">
+	    
+	     <script>
+			
+		</script>
+	    
     </head>
     <body>
     	<!-- Loader -->
@@ -29,7 +35,7 @@
 		<!-- Menu chunk -->
 		<div id='menuDiv' style="width:300px;visibility:visible;">
 			<div id='wmsGL'></div>
-			<div id='wmsGL2'></div>
+			<div id='cataVelov'></div>
 		</div>	
 		
 		<!-- Layer Mng chunk -->
@@ -38,8 +44,29 @@
 				<div id="layerTitle">Open Street Map</div>
 				<div id="layerSlider"></div>
 			</div>
-			<div id='datCarto'></div>
+			<!--<div id='datCarto'></div>-->
+			<ul id="mLayersSortable"></ul>
 		</div>
+		
+		<!-- Layer Velov info chunk -->
+		<div id='layerVelovInfo' style="width:360px; height:200px ;display:none;">
+			<div id="velovInfo-tabs">
+	                <!-- Auto create tab 1 -->
+	                <div class="x-tab">
+	                     <div id="infoVelov"></div>
+	                </div>
+                    <!-- Auto create tab 2 -->
+                    <div class="x-tab">
+                         <div id="predicVelov">
+                             <center>
+                             	A venir...
+                             </center>
+                         </div>
+                    </div>
+            </div>
+		</div>
+		<!--  -->
+		
 		
     </body>
 </html>

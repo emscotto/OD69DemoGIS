@@ -2,6 +2,9 @@ var projmercator = new OpenLayers.Projection("EPSG:900913");
 var proj4326 = new OpenLayers.Projection("EPSG:4326");
 var map;
 var osm;
+var vlu;
+var earth_radius = 6371.11;           // in km
+
 
 Ext.Loader.setConfig({
     enabled: true,
@@ -13,6 +16,8 @@ Ext.Loader.setConfig({
 });
 
 Ext.require([
+	'Ext.tab.*',
+	'Ext.menu.*',
     'Ext.container.Viewport',
     'Ext.state.Manager',
     'Ext.state.CookieProvider',
@@ -26,13 +31,31 @@ Ext.require([
     'GeoExt.slider.Tip',
     'GeoExt.slider.LayerOpacity'
 ]);
-
+var geoToolMenu;
 
 
 Ext.application({
     name: 'HelloGeoExt2',
     launch: function() {
-
+		
+		geoToolMenu = Ext.create('Ext.menu.Menu', {
+            id: 'geoToolMenu',
+	        items: [
+	            {
+                    text: 'Coordonnées du centre de la carte',
+                    handler: function(){
+                        getCenterMapLoc();
+                    }
+            	},
+            	{
+                    text: 'Chercher ma position',
+                    handler: function(){
+                        getUserLocation();
+                    }
+            	}
+	        ]
+        });
+		
         Ext.state.Manager.setProvider(Ext.create('Ext.state.CookieProvider', {
             expires: new Date(new Date().getTime()+(1000*60*60*24*7)) //7 days from now
         }));
@@ -43,15 +66,18 @@ Ext.application({
 		       displayProjection: proj4326,
 		       numZoomLevels: 19,
 		       maxResolution: 156543.0339,
+		       
 		       maxExtent: new OpenLayers.Bounds(-20037508, -20037508, 20037508,20037508.34)
         });
         
-        map.addControl(new OpenLayers.Control.LayerSwitcher({roundedCorner:true}));
+        //map.addControl(new OpenLayers.Control.LayerSwitcher({roundedCorner:true}));
         map.addControl( new OpenLayers.Control.PanZoomBar());
         map.addControl( new OpenLayers.Control.OverviewMap());
         map.addControl( new OpenLayers.Control.KeyboardDefaults());
   		
         osm = new OpenLayers.Layer.OSM("Open Street Map");
+        vlu = new OpenLayers.Layer.Vector("VLU");
+        vlu.id = "VLU";
 
         mappanel = Ext.create('GeoExt.panel.Map', {
             title: '<a href="index.html">Accueil</a> > OD69 - Géomatique',
@@ -61,36 +87,28 @@ Ext.application({
             stateful: true,
             stateId: 'mappanel',
             region:'center',
-            layers:[osm],
+            layers:[osm,vlu],
             dockedItems: [
-            			{
-			                xtype: 'toolbar',
-			                dock: 'top',
-			                items: [
-			                	{
-				                    text: 'Coordonnées du centre de la carte',
-				                    handler: function(){
-				                        var c = GeoExt.panel.Map.guess().map.getCenter().transform(projmercator,proj4326);
-				                        Ext.Msg.alert("Coordonnées du centre de la carte", c.toString());
-				                    }
-			                	},
-			                	{
-			                		text: 'Effacer les données géographiques',
-				                    handler: function(){
-				                        deleteAllGeoDataLayers();
-				                    }
-			                	},
-			                	{
-			                		text: 'Gestion des données géographiques',
-				                    handler: function(){
-				                        showLayerManagePopup();
-				                    }
-			                	}
-			                ]
-			            }
+    			{
+	                xtype: 'toolbar',
+	                dock: 'top',
+	                items: [
+	                	{
+		                    text: 'Outils',
+		                    menu: geoToolMenu
+	                	},'-',
+	                	{
+	                		text: 'Gestion des données géographiques',
+		                    handler: function(){
+		                        showLayerManagePopup();
+		                    }
+	                	}
+	                ]
+	            }
             ]
         });
-        
+
+
 		Ext.create('Ext.container.Viewport', {
             layout: 'border',
             items: [
@@ -102,11 +120,11 @@ Ext.application({
                 	collapsible:true,
                 	collapseMode:'mini',
                 	split:true,
-                	title:'Collection de données géographiques'
+                	title:'Collection de données'
                 }
             ]
         });
 		
-
+		
     }
 });

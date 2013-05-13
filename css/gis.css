@@ -2,12 +2,32 @@
    GIS custom styles
    ========================================================================== */
 
+img {
+  vertical-align:bottom;
+}
+
 a {
     color: #E74B36;
 }
 
 .wmsGLIconButton{
 	background-image: url(../img/grandlyon.png) !important;
+}
+.velovIconButton{
+	background-image: url(../img/velov.png) !important;
+}
+
+#layerFlush{
+	float:right;
+}
+
+#moveImg{
+	margin-bottom:10px; 
+	cursor: row-resize;
+}
+
+#trashImg{
+	margin-bottom:10px; 
 }
 
 #fndCarto{
@@ -17,6 +37,7 @@ a {
 	padding:2px 2px 2px 2px;
 	border-style:dotted;
 	border-width:1px;
+	background-color:#CCCCCC;
 }
 
 #layerTitle{
@@ -27,4 +48,79 @@ a {
 .layerTitle{
 	font-size:9;
 	font-weight:bold;
+}
+
+#mLayersSortable { list-style-type: none; }
+
+/* Velov Tab content */
+#vInfoCont{
+	width:560px;
+	height:350px;
+}
+#vInfoNumName{
+	width:500px;
+	height:40px;
+	float:left;
+	font-size:15px;
+	font-weight:bold;
+}
+#vInfoStatus{
+	width:60px;
+	height:40px;
+	float:left;
+	font-size:9px;
+	text-align:center;
+	font-weight:bold;
+}
+#vInfoAddress{
+	width:400px;
+	height:20px;
+	float:left;
+	font-size:12px;
+}
+#vInfoMaj{
+	width:160px;
+	height:20px;
+	float:left;
+	font-size:10px;
+	text-align:right;
+}
+#vInfoPosition{
+	width:560px;
+	height:20px;
+	float:left;
+	margin-bottom:20px;
+}
+#vInfoCash{
+	width:140px;
+	height:25px;
+	float:left;
+	text-align:center;
+}
+#vInfoCapa{
+	width:140px;
+	height:25px;
+	float:left;
+	text-align:center;
+}
+#vInfoVDisp{
+	width:140px;
+	height:25px;
+	float:left;
+	text-align:center;
+}
+#vInfoRake{
+	width:140px;
+	height:25px;
+	float:left;
+	text-align:center;
+}
+#vInfoDistance{
+	width:560px;
+	height:20px;
+	float:left;
+	margin-top:50px;
+	font-size:14px;
+	font-weight:bold;
+	text-align:center;
 }

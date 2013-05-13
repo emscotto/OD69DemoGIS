@@ -6,7 +6,9 @@ var wmsStore;
 var wmsCombo;
 var wmsGLButton;
 var wmsGLWin;
-var wmsGlListView 
+var wmsGlListView
+
+
 
 Ext.onReady(function(){
 	wmsStore = new Ext.data.ArrayStore({
@@ -71,7 +73,6 @@ function getWMSGLCapabilities(){
        data: { wmsUrl: wsmGLUri },
        cache: false,
        success: function (data) {
-       	
            var capabilities = format.read(data);
            var capability = capabilities.capability;
            cCodesArr = new Array();
